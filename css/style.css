@@ -28,6 +28,9 @@
  src: url("../font/Police Quantik/Quantik-Personal-Use-Only-Regular.otf") format("woff2");
 }
 /* Reset CSS */
+*{
+  /* cursor: url('../img/cursor.png'), auto; */
+}
 body{
   background: #00FDFF;
 background: -moz-linear-gradient(top, #00FDFF 0%, #FE00FF 100%);
@@ -35,6 +38,7 @@ background: -webkit-linear-gradient(top, #00FDFF 0%, #FE00FF 100%);
 background: linear-gradient(to bottom, #00FDFF 0%, #FE00FF 100%);
 background-repeat: no-repeat;
 color:black;
+
 }
 
 a {
@@ -66,15 +70,44 @@ h2{
   font-family : "UniversalSerf";
 }
 h3{
+    font-family : "Quantik";
+    text-shadow: 1px 1px 0px black;
+}
+h4{
+  text-shadow: 1px 1px 0px black;
+  font-family: "MadeCanvas";
+  font-size : 50px;
+}
+h5{
+  color: black;
+  font-family: "MadeCanvas";
+  font-size: 40px;
 }
 p{
+  font-family: "Quantik"
+}
+li{
   font-family: "Quantik"
 }
 .padding-top-container{
   padding-top: 90px ;
 }
-
-
+ul{
+  list-style: none;
+}
+.text-primary{
+  color: #00FDFF !important;
+  text-shadow: 1px 1px 1px black;
+}
+.text-secondary{
+  color: #FE00FF !important;
+  text-shadow: 1px 1px 1px black;
+}
+.text-warning{
+  color: #ffff00 !important;
+  text-shadow: 1px 1px 1px black;
+}
+/* -----PREMIERE PAGE -------------------------------------------------------------------------------*/
 /* NAV */
 /*  HEADER*/
 #container-palm{
@@ -132,6 +165,10 @@ border-right: 3px solid black;
   color: #00FDFF;
   text-shadow: 2px 2px 2px #000000;
 }
+
+#p-home-week{
+  font-size: 25px;
+}
 /* FOOTERS*/
 .border-top{
   border-top: 3px solid black !important;
@@ -148,4 +185,16 @@ border-right: 3px solid black;
 .btn-lg-footer{
   padding : 15px 250px;
   font-size: 14px;
+}
+/* -----Second page-----------------------------------------------------------------------------------s  */
+
+/*  Header*/
+
+#container-programme-h1{
+  margin : 70px auto;
+}
+/* Week */
+.btn-lg-week{
+  /* padding: 10px 10px !important; */
+  font-size: 30px;
 }

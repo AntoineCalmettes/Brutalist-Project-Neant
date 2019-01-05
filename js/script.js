@@ -1,5 +1,4 @@
-
-var textHolder = document.getElementsByTagName('div')[16],
+var textHolder = document.getElementsByTagName('h1')[0],
   text = textHolder.innerHTML,
 	chars = text.length,
 	newText = '',
@@ -59,11 +58,3 @@ function flicker() {
             loop();
     }, rand);
 }());
-
-var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-   if(!isChrome){
-     $('#iframeAudio').remove()
-   }
- else{
-    $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background
- }

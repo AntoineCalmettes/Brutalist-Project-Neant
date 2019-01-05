@@ -1,0 +1,16 @@
+
+/* for the program page h1 and info */
+i {
+  font: normal 100px/ 100px 'cocogoose-pro', Helvetica, Arial !important;
+	color: #EEDDE0;
+	text-shadow: 0 0 30px #EC637B,
+		0 0 10px rgba(230, 161, 173, 0.41),
+		0 0 100px #E6A1AD,
+		0 0 500px #F36780,
+		5px 9px 5px rgba(0, 0, 0, 0.5);
+}
+
+i.off {
+	color: rgba(46, 46, 46, 0.61);
+	text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
