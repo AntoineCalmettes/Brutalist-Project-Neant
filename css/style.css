@@ -50,6 +50,13 @@ a {
     color:yellow !important;
 
 }
+a:hover{
+  border: 1px solid black;
+box-shadow: inset 0 0 20px #FE00FF, 0 0 20px #FE00FF;
+background: rgba(0,0,0,0.5)
+}
+
+
 nav a {
    font-size: 40px;
     font-family: "UniversalSerf";
