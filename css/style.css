@@ -129,9 +129,7 @@ ul{
 .resize-gift-audio{
   width: 300px;
 }
-.img-home-resize{
-  width: 190px;
-}
+
 #audio{
   width: 100% ;
 }
@@ -155,6 +153,9 @@ i.off {
 
 
 /* presentation event in two */
+.img-home-resize{
+  width: 250px;
+}
 #container-presentation-two-event{
   border-bottom: 3px solid black;
   height: 610px;
