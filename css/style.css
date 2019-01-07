@@ -51,20 +51,28 @@ a {
 
 }
 a:hover{
-  border: 1px solid black;
 box-shadow: inset 0 0 20px #FE00FF, 0 0 20px #FE00FF;
 background: rgba(0,0,0,0.5)
 }
 
-
+nav a:hover{
+  box-shadow: inset 0 0 20px #FE00FF, 0 0 20px #00FDFF;
+  background: rgba(0,0,0,0.5)
+}
+footer a:hover{
+  box-shadow: inset 0 0 20px #FE00FF, 0 0 20px #00FDFF;
+  background: rgba(0,0,0,0.5)
+}
 nav a {
    font-size: 40px;
     font-family: "UniversalSerf";
 }
+
 nav{
   background-color:  #FE00FF;
   padding-bottom: 20px;
   padding-top: 20px;
+  box-shadow: 0px 0px 50px black;
 }
 
 
@@ -80,6 +88,7 @@ h3{
     font-family : "Quantik";
     text-shadow: 1px 1px 0px black;
 }
+
 h4{
   text-shadow: 1px 1px 0px black;
   font-family: "MadeCanvas";
@@ -122,7 +131,6 @@ ul{
 }
 #palm-gift{
   width: 200px;
-    border-radius: 200px;
     height: 200px;
     margin: 50px auto;
 }
@@ -156,10 +164,7 @@ i.off {
 .img-home-resize{
   width: 250px;
 }
-#container-presentation-two-event{
-  border-bottom: 3px solid black;
-  height: 610px;
-}
+
 .btn-lg{
   border-radius: 0px !important;
   text-decoration: none !important;
@@ -177,6 +182,9 @@ border-right: 3px solid black;
 #p-home-week{
   font-size: 25px;
 }
+#palm-gift-end{
+  height: 150px;
+}
 /* FOOTERS*/
 .border-top{
   border-top: 3px solid black !important;
@@ -193,6 +201,9 @@ border-right: 3px solid black;
 .btn-lg-footer{
   padding : 15px 250px;
   font-size: 14px;
+}
+.font-size-footer{
+  font-size: 30px;
 }
 /* -----Second page-----------------------------------------------------------------------------------s  */
 
