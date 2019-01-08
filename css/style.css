@@ -56,6 +56,7 @@ background: rgba(0,0,0,0.5)
 }
 
 nav a:hover{
+
   box-shadow: inset 0 0 20px #FE00FF, 0 0 20px #00FDFF;
   background: rgba(0,0,0,0.5)
 }
