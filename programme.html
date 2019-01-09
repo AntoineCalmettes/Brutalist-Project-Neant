@@ -56,15 +56,18 @@
 
     <div class="row">
       <!-- Row Sound audio -->
-      <div class="col-lg-4 offset">
+      <div class="col-lg-4 text-center">
         <img src="https://media.giphy.com/media/3o7TKtDXJ48AogQxBC/giphy.gif" class="resize-gift-audio img-fluid" alt="">
       </div>
-      <figure class="col-lg-4 col align-self-center">
-
-        <audio controls src="audio/bl00dwave-radio-jpn.mp3">
-        </audio>
+      <figure class="col-lg-4 col  player-container text-center align-self-center">
+          <div class="play-pause"></div>
+            <div class="timeline"></div>
+         <audio id="main-audio" preload="none" width="100%" src="audio/bl00dwave-radio-jpn.mp3">
+                  <source src="http://www.buzzsprout.com/15939/109759-live-from-front-end-conf.mp3" type="audio/mpeg">
+                </audio>
+                <h3 class="text-secondary">bl00dwave-radio-jpn</h3>
       </figure>
-      <div class="col-lg-4 offset">
+      <div class="col-lg-4 text-center">
         <img src="https://media.giphy.com/media/3o7TKtDXJ48AogQxBC/giphy.gif" class="resize-gift-audio img-fluid" alt="">
       </div>
     </div>
