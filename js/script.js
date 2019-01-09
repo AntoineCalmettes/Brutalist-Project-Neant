@@ -58,3 +58,19 @@ function flicker() {
             loop();
     }, rand);
 }());
+
+// ----------------------------------------------------------------------------------
+// let stockLink = document.getElementsByClassName("lol");
+//
+// function mouveBackground(link){
+//   link[0].style.background = "linear-gradient(to bottom, #00FDFF 0%, #FE00FF 100%)";
+//   link[1].style.background = "linear-gradient(to bottom, #00FDFF 0%, #FE00FF 100%)";
+//   setTimeout(mouveBackground(link),1100)
+// }
+// function mouveBackground2(link){
+//   link[0].style.background = "linear-gradient(to bottom, #FE00FF 0%, #00FDFF 100%)";
+//   link[1].style.background = "linear-gradient(to bottom, #FE00FF 0%, #00FDFF 100%)";
+//   setTimeout(mouveBackground2(link),500)
+// }
+// mouveBackground(stockLink);
+// mouveBackground2(stockLink);
