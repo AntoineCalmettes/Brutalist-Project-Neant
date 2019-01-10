@@ -1,3 +1,6 @@
+*{
+  cursor: url('../img/cursor.png'),pointer;
+}
 /*  Police install */
 @@font-face {
   font-family: "MadeCanvas";
@@ -28,9 +31,7 @@
  src: url("../font/Police Quantik/Quantik-Personal-Use-Only-Regular.otf") format("woff2");
 }
 /* Reset CSS */
-*{
-  /* cursor: url('../img/cursor.png'), auto; */
-}
+
 body{
   background: #00FDFF;
 
@@ -186,7 +187,7 @@ i.off {
 	margin-top: 20px;
 	float: left;
 	border-radius: 15px;
-background: #00FDFF;
+background: #18ffff;
 
 }
 #playhead{

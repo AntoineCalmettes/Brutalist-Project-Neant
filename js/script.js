@@ -165,3 +165,4 @@ music.addEventListener("canplaythrough", function() {
 function getPosition(el) {
     return el.getBoundingClientRect().left;
 }
+// ---------------------------------------------------------------------------------------
