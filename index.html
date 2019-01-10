@@ -73,13 +73,17 @@
       <div class="col-lg-4 text-center">
         <img src="https://media.giphy.com/media/4vPTf0iWYFXqg/giphy.gif" class="resize-gift-audio img-fluid" alt="">
       </div>
-      <figure class="col-lg-4 col  player-container text-center align-self-center">
-          <div class="play-pause"></div>
-            <div class="timeline"></div>
-         <audio id="main-audio" preload="none" width="100%" src="audio/thoughts-midnight.mp3">
-                  <source src="http://www.buzzsprout.com/15939/109759-live-from-front-end-conf.mp3" type="audio/mpeg">
-                </audio>
-<h3 class="text-secondary">thoughts-midnight</h3>
+      <figure class="col-lg-4 col  player-container text-center align-middle">
+        <audio id="music" preload="true">
+          <source src="audio/thoughts-midnight.mp3">
+              <source src="audio/thoughts-midnight.mp3">
+          </audio>
+        <div id="audioplayer">
+          <button id="pButton" class="play"></button>
+          <div id="timeline">
+                <div id="playhead"></div>
+          </div>
+        </div>
       </figure>
       <div class="col-lg-4 text-center">
         <img src="https://media.giphy.com/media/4vPTf0iWYFXqg/giphy.gif" class="resize-gift-audio img-fluid" alt="">

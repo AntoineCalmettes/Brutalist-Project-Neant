@@ -60,67 +60,108 @@ function flicker() {
 }());
 
 // ----------------------------------------------------------------------------------
-// Most of this is all Dave Rupert
-// See https://codepen.io/davatron5000/pen/uqktG
+var music = document.getElementById('music'); // id for audio element
+var duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
+var pButton = document.getElementById('pButton'); // play button
+var playhead = document.getElementById('playhead'); // playhead
+var timeline = document.getElementById('timeline'); // timeline
 
-(function(){
-  $(".play-pause").click(function() {
+// timeline width adjusted for playhead
+var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
-   if($(this).hasClass('pausing')){
-      $(this).removeClass('pausing');
-      $(this).addClass('playing');
-      $(this).css("background-image", "url(https://media.giphy.com/media/3oEhmM10mIi1dkMfmg/giphy.gif)");
-      audio.play();
-  }
-  else if($(this).hasClass('playing')){
-      $(this).removeClass('playing');
-      $(this).addClass('pausing');
-      $(this).css("background-image", "url(https://media.giphy.com/media/3oEhmM10mIi1dkMfmg/giphy.gif)");
-      audio.pause();
-  }
-  else {
-    $(this).addClass('playing');
-    $(this).css("background-image", "url(https://media.giphy.com/media/3oEhmM10mIi1dkMfmg/giphy.gif)");
-    audio.play();
-  }
+// play button event listenter
+pButton.addEventListener("click", play);
 
-});
+// timeupdate event listener
+music.addEventListener("timeupdate", timeUpdate, false);
 
+// makes timeline clickable
+timeline.addEventListener("click", function(event) {
+    moveplayhead(event);
+    music.currentTime = duration * clickPercent(event);
+}, false);
 
+// returns click as decimal (.77) of the total timelineWidth
+function clickPercent(event) {
+    return (event.clientX - getPosition(timeline)) / timelineWidth;
+}
 
-  var pcastPlayers = document.querySelectorAll('.player-container');
-  var speeds = [ 1, 1.5, 2, 2.5, 3, 0.5 ]
+// makes playhead draggable
+playhead.addEventListener('mousedown', mouseDown, false);
+window.addEventListener('mouseup', mouseUp, false);
 
-  for(i=0;i<pcastPlayers.length;i++) {
-    var player = pcastPlayers[i];
-    var audio = player.querySelector('audio');/*
-    var play = player.querySelector('.play-pause.playing');
-    var pause = player.querySelector('.play-pause.pausing');*/
+// Boolean value so that audio position is updated only when the playhead is released
+var onplayhead = false;
 
+// mouseDown EventListener
+function mouseDown() {
+    onplayhead = true;
+    window.addEventListener('mousemove', moveplayhead, true);
+    music.removeEventListener('timeupdate', timeUpdate, false);
+}
 
-
-    var progress = player.querySelector('.pcast-progress');
-
-    var currentTime = player.querySelector('.pcast-currenttime');
-
-    var currentSpeedIdx = 0;
-
-
-    var toHHMMSS = function ( totalsecs ) {
-        var sec_num = parseInt(totalsecs, 10); // don't forget the second param
-        var hours   = Math.floor(sec_num / 3600);
-        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-        var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-        if (hours   < 10) {hours   = "0"+hours; }
-        if (minutes < 10) {minutes = ""+minutes;}
-        if (seconds < 10) {seconds = "0"+seconds;}
-
-        var time = hours+':'+minutes+':'+seconds;
-        if (hours   <= 1) { var time = minutes+':'+seconds; }
-
-        return time;
+// mouseUp EventListener
+// getting input from all mouse clicks
+function mouseUp(event) {
+    if (onplayhead == true) {
+        moveplayhead(event);
+        window.removeEventListener('mousemove', moveplayhead, true);
+        // change current time
+        music.currentTime = duration * clickPercent(event);
+        music.addEventListener('timeupdate', timeUpdate, false);
     }
+    onplayhead = false;
+}
+// mousemove EventListener
+// Moves playhead as user drags
+function moveplayhead(event) {
+    var newMargLeft = event.clientX - getPosition(timeline);
 
-  }
-})(this);
+    if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+        playhead.style.marginLeft = newMargLeft + "px";
+    }
+    if (newMargLeft < 0) {
+        playhead.style.marginLeft = "0px";
+    }
+    if (newMargLeft > timelineWidth) {
+        playhead.style.marginLeft = timelineWidth + "px";
+    }
+}
+
+// timeUpdate
+// Synchronizes playhead position with current point in audio
+function timeUpdate() {
+    var playPercent = timelineWidth * (music.currentTime / duration);
+    playhead.style.marginLeft = playPercent + "px";
+    if (music.currentTime == duration) {
+        pButton.className = "";
+        pButton.className = "play";
+    }
+}
+
+//Play and Pause
+function play() {
+    // start music
+    if (music.paused) {
+        music.play();
+        // remove play, add pause
+        pButton.className = "";
+        pButton.className = "pause";
+    } else { // pause music
+        music.pause();
+        // remove pause, add play
+        pButton.className = "";
+        pButton.className = "play";
+    }
+}
+
+// Gets audio file duration
+music.addEventListener("canplaythrough", function() {
+    duration = music.duration;
+}, false);
+
+// getPosition
+// Returns elements left position relative to top-left of viewport
+function getPosition(el) {
+    return el.getBoundingClientRect().left;
+}
