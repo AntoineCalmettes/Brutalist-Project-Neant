@@ -1,6 +1,6 @@
-/* *{
+*{
   cursor: url('../img/cursor.png'),pointer;
-} */
+}
 /*  Police install */
 @@font-face {
   font-family: "MadeCanvas";
@@ -10,14 +10,7 @@
   font-family: "UniversalSerf";
   src :url("../font/Police universal_serif/universal_serif/Universal Serif.ttf");
 }
-@font-face {
-  font-family: "VegasNeon";
-  src :url("../font/Police Vegasneon/VegasNeon.ttf") ;
-}
-@font-face {
-  font-family: "retro_stereo_thin";
-  src :url("../font/retro_stereo_thin/Retro_Stereo_Thin.ttf") ;
-}
+
 @font-face {
   font-family: "Nixie One";
   src :url("../font/nixie_one/NixieOne.ttf");
@@ -29,6 +22,10 @@
 @@font-face {
   font-family: "Quantik";
  src: url("../font/Police Quantik/Quantik-Personal-Use-Only-Regular.otf") format("woff2");
+}
+@font-face {
+  font-family: "fengardoneue";
+  src :url("../font/FengardoNeue/fengardoneue_regular-webfont.ttf");
 }
 /* Reset CSS */
 
@@ -79,13 +76,13 @@ nav{
 h1{
   color: #FE00FF !important;
   font-size: 100px !important;
-  font-family: 'cocogoose-pro' ,sans-serif ;
+  font-family: 'cocogoose-pro' ,serif ;
 }
 h2{
-  font-family : "UniversalSerf";
+  font-family : "UniversalSerf",arial,serif;
 }
 h3{
-    font-family : "Quantik";
+    font-family : "Quantik",arial,serif;
     text-shadow: 1px 1px 0px black;
 }
 
@@ -96,11 +93,11 @@ h4{
 }
 h5{
   color: black;
-  font-family: "MadeCanvas";
+font-family: "fengardoneue",arial,serif;
   font-size: 40px;
 }
 p{
-  font-family: "Quantik"
+  font-family: "fengardoneue",arial,serif;
 }
 li{
   font-family: "Quantik"
@@ -111,6 +108,9 @@ li{
 ul{
   list-style: none;
 }
+iframe{
+  filter: hue-rotate(100deg);
+}
 .text-primary{
   color: #00FDFF !important;
   text-shadow: 1px 1px 1px black;
@@ -120,8 +120,9 @@ ul{
   text-shadow: 1px 1px 1px black;
 }
 .text-warning{
-  color: #ffff00 !important;
+  color: #ffff19 !important;
   text-shadow: 1px 1px 1px black;
+  font-size: 25px;
 }
 /* -----PREMIERE PAGE -------------------------------------------------------------------------------*/
 /* NAV */
